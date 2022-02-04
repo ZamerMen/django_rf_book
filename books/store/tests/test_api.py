@@ -11,11 +11,10 @@ class BooksApiTestCase(APITestCase):
         book_1 = Book.objects.create(name='test book1', price=25)
         book_2 = Book.objects.create(name='test book2', price=35)
         url = reverse('book-list')
-        print('///////////////////')
-        print(url)
         response = self.client.get(url)
-        print(response.data)
-        print('///////////////////')
         self.assertEqual(status.HTTP_200_OK, response.status_code)
         serializer_data = BooksSerializer([book_1, book_2], many=True).data
         self.assertEqual(response.data, serializer_data)
+
+def sum(a, b):
+    return a + b
