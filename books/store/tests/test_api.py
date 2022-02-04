@@ -16,5 +16,3 @@ class BooksApiTestCase(APITestCase):
         serializer_data = BooksSerializer([book_1, book_2], many=True).data
         self.assertEqual(response.data, serializer_data)
 
-def sum(a, b):
-    return a + b
